@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const request = require('supertest');
 const { validate } = require('uuid');
 
@@ -10,7 +11,7 @@ describe('Users', () => {
       .send({
         name: 'John Doe',
         username: 'johndoe'
-      })
+      });
     expect(201);
 
     expect(validate(response.body.id)).toBe(true);

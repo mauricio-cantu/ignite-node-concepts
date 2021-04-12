@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 const request = require('supertest');
 const { validate } = require('uuid');
 
 const app = require('../');
 
 describe('Todos', () => {
-  it("should be able to list all user's todo", async () => {
+  it('should be able to list all user\'s todo', async () => {
     const userResponse = await request(app)
       .post('/users')
       .send({
@@ -29,8 +30,8 @@ describe('Todos', () => {
     expect(response.body).toEqual(
       expect.arrayContaining([
         todoResponse.body
-      ]),
-    )
+      ])
+    );
   });
 
   it('should be able to create a new todo', async () => {
